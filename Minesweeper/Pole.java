@@ -1,17 +1,14 @@
-
 /**
- * Trieda {@code Pole} slúži na «doplňte opis»…
+ * Trieda {@code Pole} slúži na vytvorenie jedného poľa.
  *
  * @author   «meno autora»
  * @version  «verzia alebo dátum»
  */
-public class Pole
-{
-    // Nahraďte nižšie uvedený príklad vlastnými premennými…
-
-    // inštančné premenné…
+public class Pole {
+    private Boolean JeMina;
+    private boolean JeOdhalene;
+    
     private int x;
-
 
     /**
      * Konštruktory objektov triedy Pole.
