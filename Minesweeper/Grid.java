@@ -15,7 +15,6 @@ public class Grid
     private int vyska;
     private int velkostPolicka;
 
-
     /**
      * Konštruktory objektov triedy Grid.
      */
@@ -30,15 +29,32 @@ public class Grid
             }
         }
     }
-    
-    public void zaber(int x, int y) {
-        Pole p = this.policka[y][x];
-        if (p.getNieJeOdhalene() == true ) {
-            p.odhal();
-        } else if (p.getJeOdhalene() == true) {
-            p.jeOdhalene();
+
+    public Pole getPole(int x, int y) {
+        if (x >= 0 && x < this.sirka && y >= 0 && y < this.vyska) {
+            return this.policka[y][x];
         }
-        }
+        return null;
     }
 
-    
+    public int getSirka() {
+        return this.sirka;
+    }
+
+    public int getVyska() {
+        return this.vyska;
+    }
+
+    public int getVelkostPolicka() {
+        return this.velkostPolicka;
+    }
+
+    public void odhalPole(int x, int y) {
+        Pole pole = this.getPole(x, y);
+        if (pole != null) {
+            pole.odhal();
+        }
+
+    }
+}
+
