@@ -22,7 +22,13 @@ public class Hra {
     System.out.println("Zadajte počet umiestnených mín:");
     int pocetMin = citac.nextInt();
     
-    this.grid = new Grid(sirka, vyska,50);
+    int maxMiny = sirka * vyska;
+    if (pocetMin <= 0 || pocetMin >= maxMiny) {
+        System.out.println("Zadaný počet mín je neplatný, skúste znovu!");
+        System.out.println("Zadajte počet umiestnených mín:");
+    }
+    
+    this.grid = new Grid(sirka, vyska,50, pocetMin);
     this.manazer = new Manazer();
     
     this.manazer.spravujObjekt(this);
