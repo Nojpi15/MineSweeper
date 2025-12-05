@@ -1,30 +1,45 @@
-/**
- * Trieda {@code Hra} slúži na «doplňte opis»…
- *
- * @author   «meno autora»
- * @version  «verzia alebo dátum»
- */
+
+import fri.shapesge.Manazer;
+import java.util.Scanner;
+
 public class Hra {
-    private int x;
+
+    private Manazer manazer;
+    private Grid grid;
+ 
 
 
-    /**
-     * Konštruktory objektov triedy Hra.
-     */
+    
     public Hra() {
-        x = 0;
+    
+    Scanner citac = new Scanner(System.in);
+    System.out.println("Zadajte šírku gridu:");
+    int sirka = citac.nextInt();
+    
+    System.out.println("Zadajte výšku gridu:");
+    int vyska = citac.nextInt();
+    
+    System.out.println("Zadajte počet umiestnených mín:");
+    int pocetMin = citac.nextInt();
+    
+    this.grid = new Grid(sirka, vyska,50);
+    this.manazer = new Manazer();
+    
+    this.manazer.spravujObjekt(this);
+
+        
     }
-
-
-    /**
-     * Prázdna metóda – «tento komentár nahraďte vlastným opisom»…
-     *
-     * @param   y  opis významu parametra
-     * @return     opis významu návratovej hodnoty – napr.: súčet x a y
-     */
-    public int príkladMetódy(int y)
-    {
-        // Sem vložte príkazy tela metódy.
-        return x + y;
+   
+    public void vyberSuradnice(int xGraficke, int yGraficke) {
+        int x = xGraficke / grid.getVelkostPolicka();
+        int y = yGraficke / grid.getVelkostPolicka();
+        
+        grid.odhalPole(x, y);
+    
+    }
+    
+    public void zrus() {
+       System.exit(0); 
+    
     }
 }
