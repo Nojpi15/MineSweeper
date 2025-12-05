@@ -5,12 +5,13 @@
  * @author   «meno autora»
  * @version  «verzia alebo dátum»
  */
-public class Grid
-{
-    // Nahraďte nižšie uvedený príklad vlastnými premennými…
 
-    // inštančné premenné…
-    private Pole[][] policka;    
+import java.util.Random; 
+
+public class Grid {
+    
+    private Pole[][] policka;
+    private boolean[][] miny;
     private int sirka;
     private int vyska;
     private int velkostPolicka;
@@ -18,16 +19,27 @@ public class Grid
     /**
      * Konštruktory objektov triedy Grid.
      */
-    public Grid(int sirka, int vyska, int velkostPolicka) {
+    public Grid(int sirka, int vyska, int velkostPolicka, int pocetMin) {
         this.sirka = sirka;
         this.vyska = vyska;
         this.velkostPolicka = velkostPolicka;
-        this.policka = new Pole[vyska][sirka];      
+        
+        this.policka = new Pole[vyska][sirka];  
+        this.miny = new boolean[vyska][sirka];
+        
         for (int y = 0; y < vyska; y++) {
             for (int x = 0; x < sirka; x++) {
                 this.policka[y][x] = new Pole(x, y, velkostPolicka);
             }
         }
+        
+        generujMiny(pocetMin);
+    }
+    
+    public void generujMiny(int pocetMin) {
+        Random r = new Random();
+        int vlozene = 0;
+    
     }
 
     public Pole getPole(int x, int y) {
