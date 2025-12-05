@@ -1,24 +1,17 @@
-
 /**
  * Trieda {@code Hra} slúži na «doplňte opis»…
  *
  * @author   «meno autora»
  * @version  «verzia alebo dátum»
  */
-public class Hra
-{
-    // Nahraďte nižšie uvedený príklad vlastnými premennými…
-
-    // inštančné premenné…
+public class Hra {
     private int x;
 
 
     /**
      * Konštruktory objektov triedy Hra.
      */
-    public Hra()
-    {
-        // Inicializujte inštančné premenné.
+    public Hra() {
         x = 0;
     }
 
