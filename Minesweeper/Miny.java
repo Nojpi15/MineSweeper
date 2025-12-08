@@ -1,24 +1,17 @@
-
 /**
- * Trieda {@code GrafickeRozhranie} slúži na «doplňte opis»…
+ * Trieda {@code Miny} slúži na «doplňte opis»…
  *
  * @author   «meno autora»
  * @version  «verzia alebo dátum»
  */
-public class GrafickeRozhranie
-{
-    // Nahraďte nižšie uvedený príklad vlastnými premennými…
-
-    // inštančné premenné…
+public class Miny {
     private int x;
 
 
     /**
-     * Konštruktory objektov triedy GrafickeRozhranie.
+     * Konštruktory objektov triedy Hra.
      */
-    public GrafickeRozhranie()
-    {
-        // Inicializujte inštančné premenné.
+    public Miny() {
         x = 0;
     }
 
