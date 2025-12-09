@@ -50,7 +50,13 @@ public class Pole {
             }
         }
     }
-
+    public void nastavMinu(){
+        this.jeMina = true;
+        //this.stvorec.zmenFarbu("#8B0000");
+    }
+     public void nastavPocetSusednychMin(int pocet) {
+        this.pocetSusednychMin = pocet;
+    }
     /**
      * Vráti farbu podľa počtu susedných mín.
      */
