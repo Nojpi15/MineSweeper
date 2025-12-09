@@ -78,5 +78,7 @@ public class Pole {
         return this.pocetSusednychMin;
     }
 
-    
+    public void vlajka() {
+        this.stvorec.zmenFarbu("#00FF00");
+    }
 }
