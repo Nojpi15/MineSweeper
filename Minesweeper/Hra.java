@@ -5,27 +5,20 @@ public class Hra {
     private Grid grid;
     public boolean hraBezi = true;
     private int skore = 0;
- 
 
 
-    
     public Hra() {
         this.start();
-        
+
         this.manazer = new Manazer();
         this.manazer.spravujObjekt(this);
     }
-    
-    this.grid = new Grid(sirka, vyska,50, pocetMin);
-    this.manazer = new Manazer();
-    
-    this.manazer.spravujObjekt(this);
 
     public void start() {
         Scanner citac = new Scanner(System.in);
         System.out.println("Zadajte názov obtiažnosti: lahka, stredna, tazka, vlastna");
         String nazov = citac.nextLine();
-        
+
         if (nazov.toLowerCase().equals("lahka")) {
             this.grid = new Grid(5, 5, 50, 10);
         } else if (nazov.toLowerCase().equals("stredna")) {
@@ -55,13 +48,13 @@ public class Hra {
             this.start();
         }
     }
-   
+
     public void vyberSuradnice(int xGraficke, int yGraficke) {
         if (!hraBezi) {
             System.out.println("Hra už skončila, pre ukončenie hry stlač ESC");
             return;
         }
- 
+
         int x = xGraficke / grid.getVelkostPolicka();
         int y = yGraficke / grid.getVelkostPolicka();
         Pole pole = grid.getPole(x, y);
@@ -88,7 +81,7 @@ public class Hra {
     }
 
     public void zrus() {
-       System.exit(0); 
-    
+        System.exit(0); 
+
     }
 }
