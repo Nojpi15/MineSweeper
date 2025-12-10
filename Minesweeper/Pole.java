@@ -75,4 +75,7 @@ public class Pole {
         return this.jeOdhalene;
     }
 
+    public void vlajka() {
+        this.stvorec.zmenFarbu("#00FF00");
+    }
 }

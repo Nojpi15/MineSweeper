@@ -106,4 +106,11 @@ public class Grid {
             }
         }
     }
+    
+    public void umiestniVlajku(int x, int y) {
+        Pole pole = this.getPole(x, y);
+        if (pole != null) {
+            pole.vlajka();
+        }
+    }
 }
