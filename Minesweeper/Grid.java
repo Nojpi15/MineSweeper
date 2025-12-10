@@ -1,9 +1,9 @@
 /**
-* Trieda {@code Grid} slúži na «doplňte opis»…
-*
-* @author   «meno autora»
-* @version  «verzia alebo dátum»
-*/
+ * Trieda {@code Grid} slúži na «doplňte opis»…
+ *
+ * @author   «meno autora»
+ * @version  «verzia alebo dátum»
+ */
 import java.util.Random;
 public class Grid {
     private Pole[][] policka;
@@ -29,6 +29,7 @@ public class Grid {
         generujMiny(pocetMin);
         vypocitajSusedneMiny();
     }
+
     public void generujMiny(int pocetMin) {
         Random r = new Random();
         int umiestneneMin = 0;
@@ -42,16 +43,18 @@ public class Grid {
             }
         }
     }
+
     public void vypocitajSusedneMiny(){
         for(int y = 0; y < this.vyska; y++) {
             for(int x = 0; x < this.sirka; x++){
                 if(!this.miny[y][x]) {
-                int pocet = this.spocitajSusedneMiny(x,y);
-                this.policka[y][x].nastavPocetSusednychMin(pocet);
+                    int pocet = this.spocitajSusedneMiny(x,y);
+                    this.policka[y][x].nastavPocetSusednychMin(pocet);
                 }
             }
         }
     }
+
     private int spocitajSusedneMiny(int x, int y) {
         int pocet = 0; 
         int dy;
@@ -65,14 +68,13 @@ public class Grid {
                 int susedY = y + dy;
                 if(susedX >= 0 && susedX < this.sirka && susedY >= 0 && susedY < this.vyska){
                     if(this.miny[susedY][susedX]){
-                    pocet++;
+                        pocet++;
                     }
                 }
             }
         }
         return pocet;
     }
- 
 
     public Pole getPole(int x, int y) {
         if (x >= 0 && x < this.sirka && y >= 0 && y < this.vyska) {
@@ -80,15 +82,19 @@ public class Grid {
         }
         return null;
     }
+
     public int getSirka() {
         return this.sirka;
     }
+
     public int getVyska() {
         return this.vyska;
     }
+
     public int getVelkostPolicka() {
         return this.velkostPolicka;
     }
+
     public boolean odhalPole(int x, int y) {
         Pole pole = this.getPole(x, y);
         if (pole != null) {
@@ -97,6 +103,7 @@ public class Grid {
         }
         return false;
     }
+
     public void odhalVsetkyMiny() {
         for (int y = 0; y < vyska; y++) {
             for (int x = 0; x < sirka; x++) {
@@ -104,6 +111,13 @@ public class Grid {
                     policka[y][x].odhal();
                 }
             }
+        }
+    }
+
+    public void umiestniVlajku(int x, int y) {
+        Pole pole = this.getPole(x, y);
+        if (pole != null) {
+            pole.vlajka();
         }
     }
 }
