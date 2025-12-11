@@ -4,8 +4,7 @@
  * @author   «meno autora»
  * @version  «verzia alebo dátum»
  */
-import fri.shapesge.Stvorec; 
-
+import fri.shapesge.Stvorec;
 public class Pole {
     private Stvorec stvorec;
     private boolean jeMina;
@@ -14,7 +13,6 @@ public class Pole {
     private int x;
     private int y;
     private int velkost;
-
     /**
      * Konštruktory objektov triedy Pole.
      */
@@ -25,19 +23,17 @@ public class Pole {
         this.jeMina = false;
         this.jeOdhalene = false;
         this.pocetSusednychMin = 0;
-
         this.stvorec = new Stvorec();
         this.stvorec.zmenStranu(velkost - 1);
         this.stvorec.posunVodorovne(-60 + x * velkost);
         this.stvorec.posunZvisle(-50 + y * velkost);
         this.stvorec.zmenFarbu("#B1C9EE"); 
         this.stvorec.zobraz();
-
     }
+
     public void odhal() {
         if (!this.jeOdhalene) {
             this.jeOdhalene = true;
-
             if (this.jeMina) {
                 // Červená farba pre mínu
                 this.stvorec.zmenFarbu("#FF0000");
@@ -50,13 +46,16 @@ public class Pole {
             }
         }
     }
+
     public void nastavMinu(){
         this.jeMina = true;
         //this.stvorec.zmenFarbu("#8B0000");
     }
-     public void nastavPocetSusednychMin(int pocet) {
+
+    public void nastavPocetSusednychMin(int pocet) {
         this.pocetSusednychMin = pocet;
     }
+
     /**
      * Vráti farbu podľa počtu susedných mín.
      */
@@ -73,10 +72,16 @@ public class Pole {
             default: return "#FFFFFF"; // Biela
         }
     }
-    
+
     public int getPocetSusednychMin() {
         return this.pocetSusednychMin;
     }
 
-    
+    public boolean jeUzOdhalene() {
+        return this.jeOdhalene;
+    }
+
+    public void vlajka() {
+        this.stvorec.zmenFarbu("#00FF00");
+    }
 }
